@@ -9,7 +9,7 @@ public class FlashEffect : MonoBehaviour
     public float flashDuration = 1f;
     public Color flashColor = Color.white;
 
-    float flashTimer;
+    float flashTimer = -1;
     Color originalColor;
     Color tempColor;
 

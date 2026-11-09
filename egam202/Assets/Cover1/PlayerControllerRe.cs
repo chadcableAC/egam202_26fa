@@ -26,6 +26,9 @@ public class PlayerControllerRe : MonoBehaviour
 
     public GameObject moveTargetHandle;
 
+    // Animation info
+    public Animator myAnimator;
+
     void Awake()
     {
         // Set the initial state
@@ -107,6 +110,8 @@ public class PlayerControllerRe : MonoBehaviour
             moveInput = moveInput.normalized;
         }
 
+        myAnimator.SetFloat("InputAmount", moveInput.magnitude);
+
         // Up/down input = forward and backward movement
         var velocity = Vector3.zero;
         var myForward = transform.forward;
@@ -145,6 +150,8 @@ public class PlayerControllerRe : MonoBehaviour
         {
             moveInput = moveInput.normalized;
         }
+        
+        myAnimator.SetFloat("InputAmount", moveInput.magnitude);
 
         // Find the camera direction
         var mainCamera = Camera.main;
@@ -189,11 +196,11 @@ public class PlayerControllerRe : MonoBehaviour
             var worldRay = camera.ScreenPointToRay(mousePosition);
 
             // Project a "ray" from the camera into space
-            // var mask_layer = LayerMask.NameToLayer("Clickable");
-            // var mask = 1 << mask_layer;
+            var mask_layer = LayerMask.NameToLayer("Clickable");
+            var mask = 1 << mask_layer;
 
-            // if (Physics.Raycast(worldRay.origin, worldRay.direction, out RaycastHit hitInfo, 100, mask))
-            if (Physics.Raycast(worldRay.origin, worldRay.direction, out RaycastHit hitInfo, 100))
+            if (Physics.Raycast(worldRay.origin, worldRay.direction, out RaycastHit hitInfo, 100, mask))
+            // if (Physics.Raycast(worldRay.origin, worldRay.direction, out RaycastHit hitInfo, 100))
             {
                 // Only set the destination on mouse clicks
                 if (mouse.leftButton.wasPressedThisFrame)
@@ -208,5 +215,7 @@ public class PlayerControllerRe : MonoBehaviour
                 
             Debug.DrawRay(worldRay.origin, worldRay.direction * 100, Color.red);
         }
+
+        myAnimator.SetFloat("InputAmount", agent.velocity.magnitude);
     }
 }

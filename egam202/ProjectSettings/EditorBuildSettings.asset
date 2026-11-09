@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Cover1/re_cover.unity
-    guid: 1685f483bee514935bd869c6108bb48f
+    path: Assets/Technical2/technical_2.unity
+    guid: deb3cc31edd48422e951b83c90031018
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

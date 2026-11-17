@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Technical2/technical_2.unity
     guid: deb3cc31edd48422e951b83c90031018
+  - enabled: 1
+    path: Assets/Week10/level_1.unity
+    guid: 307e8948969b34f9c81259a210a9dbb7
+  - enabled: 1
+    path: Assets/Week10/level_2.unity
+    guid: b3446aa4d92884de68a660c707f74e14
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
